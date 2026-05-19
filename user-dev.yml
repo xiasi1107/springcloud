@@ -2,6 +2,15 @@
 spring:
   application:
     name: myshop-user
+  rabbitmq:
+    host: localhost # 教材示例：192.168.137.20（RabbitMQ 在虚机/Docker 时改对应 IP）
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  cloud:
+    bus:
+      enabled: true
   datasource:
     url: jdbc:mysql://192.168.150.128:3307/myshop_user_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
     username: root
