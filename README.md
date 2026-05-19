@@ -26,7 +26,7 @@ git remote add origin https://github.com/<你的用户名>/springcloud.git
 git push -u origin main
 ```
 
-推送后，在 **config-server** 的 `application.yml` 中将 `spring.cloud.config.server.git.uri` 改为你的 GitHub 地址。
+推送后，在 **myshop-config** 的 `application.yml` 中将 `spring.cloud.config.server.git.uri` 改为你的 GitHub 地址。
 
 ## Config Server 拉取名称
 
