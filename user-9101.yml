@@ -1,0 +1,10 @@
+# myshop-user 实例 9101（profile: 9101，启动时：dev,9101）
+server:
+  port: 9101
+
+eureka:
+  instance:
+    instance-id: myshop-user:9101
+
+user:
+  instance-tag: 用户微服务22222

@@ -1,0 +1,9 @@
+# eureka-server 公共配置（profile: dev）
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  server:
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 10000

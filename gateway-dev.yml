@@ -1,0 +1,42 @@
+# myshop-gateway（profile: dev）
+server:
+  port: 8222
+
+spring:
+  application:
+    name: myshop-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: myshop-user
+          uri: lb://myshop-user
+          predicates:
+            - Path=/myshop-user/**
+          filters:
+            - StripPrefix=1
+        - id: myshop-web
+          uri: lb://myshop-web
+          predicates:
+            - Path=/myshop-web/**
+          filters:
+            - StripPrefix=1
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    prefer-ip-address: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: myshop-user
+        url: /myshop-user/v3/api-docs
+      - name: myshop-web
+        url: /myshop-web/v3/api-docs

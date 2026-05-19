@@ -1,0 +1,10 @@
+# eureka 节点 8888（profile: 8888）
+server:
+  port: 8888
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false

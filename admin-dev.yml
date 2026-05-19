@@ -1,0 +1,7 @@
+# admin 监控中心（profile: dev）
+server:
+  port: 7779
+
+spring:
+  application:
+    name: admin

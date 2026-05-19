@@ -1,0 +1,33 @@
+# myshop-user 公共配置（profile: dev）
+spring:
+  application:
+    name: myshop-user
+  datasource:
+    url: jdbc:mysql://192.168.150.128:3306/myshop_user_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
+
+user:
+  instance-tag: 用户微服务11111
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

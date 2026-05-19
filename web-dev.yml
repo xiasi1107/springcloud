@@ -1,0 +1,50 @@
+# myshop-web（profile: dev）
+server:
+  port: 9002
+
+spring:
+  application:
+    name: myshop-web
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  boot:
+    admin:
+      client:
+        enabled: false
+        url: http://localhost:7779
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        requestVolumeThreshold: 20
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,hystrix.stream
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  packages-to-scan: com.orbitlane.myshopweb

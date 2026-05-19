@@ -1,0 +1,10 @@
+# eureka 节点 9999（profile: 9999）
+server:
+  port: 9999
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false

@@ -1,0 +1,7 @@
+# myshop-user 实例 9001（profile: 9001，启动时与 dev 一起激活：dev,9001）
+server:
+  port: 9001
+
+eureka:
+  instance:
+    instance-id: myshop-user:9001
